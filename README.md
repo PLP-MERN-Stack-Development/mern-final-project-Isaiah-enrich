@@ -1,52 +1,136 @@
-# MERN Stack Capstone Project
+MERN Final Project – E-commerce Platform
+Table of Contents
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+Project Description
 
-## Assignment Overview
+Features
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+Technologies Used
 
-## Getting Started
+Folder Structure
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+Setup Instructions
 
-## Files Included
+Environment Variables
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+Running the Application
 
-## Requirements
+API Endpoints
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+Deployment
 
-## Project Ideas
+Screenshots
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+License
 
-## Submission
+Project Description
 
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+This is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) e-commerce application.
+It allows users to:
 
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
+Register and login
 
-## Resources
+Browse products
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+Create and view orders
+
+Admins can manage products (CRUD operations)
+
+The backend exposes RESTful APIs and supports JWT authentication.
+The frontend is built with React, providing a responsive and dynamic user interface.
+
+Features
+
+User Authentication (register/login)
+
+Product Management (create, read, update, delete)
+
+Order Management (create and list orders)
+
+JWT-based authentication
+
+Admin-only routes
+
+RESTful API design
+
+Real-time updates (optional with Socket.io for future enhancement)
+
+Technologies Used
+
+Frontend: React.js, React Router, TailwindCSS, Axios
+
+Backend: Node.js, Express.js, JWT, bcryptjs
+
+Database: MongoDB Atlas
+
+Dev Tools: Nodemon, VS Code
+
+Deployment: Vercel (frontend), Render/Heroku (backend)
+
+Folder Structure
+mern-final-project/
+├── client/              # React frontend
+├── server/              # Node/Express backend
+│   ├── config/          # Database connection
+│   ├── controllers/     # Route controllers
+│   ├── models/          # Mongoose models
+│   ├── routes/          # API routes
+│   ├── server.js        # Entry point
+│   └── package.json
+├── .gitignore
+└── README.md
+
+Setup Instructions
+
+Clone the repository
+
+git clone https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-Isaiah-enrich.git
+cd mern-final-project/server
+
+
+Install backend dependencies
+
+npm install
+
+
+Install frontend dependencies
+
+cd ../client
+npm install
+
+Environment Variables
+
+Create a .env file in server/ with the following:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+
+Running the Application
+Backend
+cd server
+npm run dev
+
+Frontend
+cd client
+npm start
+
+
+The app should now be accessible at http://localhost:3000
+
+API Endpoints
+Users
+Method	Route	Description
+POST	/api/users/register	Register new user
+POST	/api/users/login	Login user & get token
+Products
+Method	Route	Description
+GET	/api/products	Get all products
+GET	/api/products/:id	Get single product
+POST	/api/products	Create product (admin)
+PUT	/api/products/:id	Update product (admin)
+DELETE	/api/products/:id	Delete product (admin)
+Orders
+Method	Route	Description
+POST	/api/orders	Create new order
+GET	/api/orders/user/:userId	Get user's orders
